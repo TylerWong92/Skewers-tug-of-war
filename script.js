@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////
-//1.Create a function that calculate 0-100 pressing "spacebar"
+//1.Create a function that calculate 0-10 pressing "spacebar"
 
 let dmgCount = 0;
 const maxHealth = 10;
