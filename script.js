@@ -1,54 +1,31 @@
 ////////////////////////////////////////////////////////////////
-//1.Create a function that calculate 0-10 pressing "spacebar"
+//Game parameters
+let score = 0;
+const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
+const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
+const scoreDisplay = document.querySelector("h3"); // display current the score
 
-let dmgCount = 0;
-const maxHealth = 10;
-//Function that listen to user input of pressing "space"
-//stop the loop if user input reach "maxHealth"
-const dmgCounter = document.addEventListener("keydown", function (event) {
-  if (event.code === "Space" && dmgCount < maxHealth) {
-    dmgCount++;
-    console.log(dmgCount);
-    printResult(dmgCount);
+//Function that listen to user input of player1 pressing "space" and player2 pressing ""up arrow""
+//stop the loop if user input reach "winScoreP1" or "winScoreP2"
+const gameLogic = document.addEventListener("keydown", function (event) {
+  if (event.code === "Space" && score < winScoreP1 && score > winScoreP2) {
+    score++;
+    console.log(score);
+    result.innerText = score;
+  } else if (
+    event.code === "ArrowUp" &&
+    score < winScoreP1 &&
+    score > winScoreP2
+  ) {
+    score--;
+    console.log(score);
+    result.innerText = score;
+  }
+  if (score === winScoreP1) {
+    result.innerText = "player 1 win!";
+  } else if (score === winScoreP2) {
+    result.innerText = "player 2 win!";
   }
 });
-
-// Function logic of the game
-
-function printResult(dmgCount) {
-  if (dmgCount === maxHealth) {
-    console.log("you win!");
-    dmgCount = 0;
-  }
-}
-//Gauge To be remove after testing REMOVE !!!!!!!!!!!
-const gaugeElement = document.querySelector(".gauge");
-function setGaugeValue(gauge, value) {
-  if (value < 0 || value > 1) {
-    return;
-  }
-
-  gauge.querySelector(".gauge__fill").style.transform = `rotate(${
-    value / 2
-  }turn)`;
-  gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-    value * 100
-  )}%`;
-}
-setGaugeValue(gaugeElement, 0.8);
-//Gauge To be Remove after testing REMOVE !!!!!!!!!!!
-
-// // Game
-// Const startPoint = 50;
-// Const player1win = 0;
-// Const player2win = 100;
-
-// Let dmg = 1
-// Event listener set space to dmg++
-
-// Function dmgInput (player1, player2, com){
-// player1.dmg++
-// Player2.dmg- -
-// com.dmg(var )//with case and break// create multiples
-
-// }
+//End
+////////////////////////////////////////////////////////////////
