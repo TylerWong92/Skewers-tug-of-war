@@ -21,3 +21,18 @@ function printResult(dmgCount) {
     dmgCount = 0;
   }
 }
+
+// // Game
+// Const startPoint = 50;
+// Const player1win = 0;
+// Const player2win = 100;
+
+// Let dmg = 1
+// Event listener set space to dmg++
+
+// Function dmgInput (player1, player2, com){
+// player1.dmg++
+// Player2.dmg- -
+// com.dmg(var )//with case and break// create multiples
+
+// }
