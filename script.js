@@ -5,6 +5,8 @@ let score = 0;
 const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
 const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
 const scoreDisplay = document.querySelector("h3"); // display current the score
+let str = 1000; // lower the number mean higher str
+let count = 0;
 //End
 ////////////////////////////////////////////////////////////////
 //Game logic
@@ -16,6 +18,7 @@ const gameLogic = document.addEventListener("keydown", function (event) {
     score++;
     console.log(score);
     scoreDisplay.innerText = score;
+    counter(); // Record number of rounds
     //Player 1 Game logic
   } else if (
     event.code === "ArrowUp" &&
@@ -37,8 +40,8 @@ const gameLogic = document.addEventListener("keydown", function (event) {
 ////////////////////////////////////////////////////////////////
 //Create Computer if there no player 2
 
-function setLevel() {
-  setInterval(comInput, 1000);
+function setLevel(comInput, str) {
+  setInterval(comInput, str);
 }
 // Execute the comInput function every 1000 milliseconds level 1
 
@@ -57,3 +60,14 @@ document.addEventListener("keydown", function (event) {
 });
 //End
 ////////////////////////////////////////////////////////////////
+//Create parameters of the different level of the game. Var "strength",
+//Create a counter function that count how many times a player 1 wins and increase the counter
+
+function counter() {
+  if (score === winScoreP1) {
+    count++;
+    console.log(count);
+    console.log(score + "what is current score");
+    console.log(winScoreP1 + "winScoreP1");
+  }
+}
