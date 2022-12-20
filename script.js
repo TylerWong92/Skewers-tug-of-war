@@ -1,4 +1,8 @@
 ////////////////////////////////////////////////////////////////
+//Gauge GUI TEST REMOVE AFTER
+
+// End
+////////////////////////////////////////////////////////////////
 //Game parameters
 
 let score = 0;
@@ -6,7 +10,9 @@ const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
 const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
 const scoreDisplay = document.querySelector("h3"); // display current the score
 let str = 1000; // lower the number mean higher str
-let count = 0;
+let win = 0; // count user winning streak
+// let count = 0;
+
 //End
 ////////////////////////////////////////////////////////////////
 //Game logic
@@ -18,7 +24,6 @@ const gameLogic = document.addEventListener("keydown", function (event) {
     score++;
     console.log(score);
     scoreDisplay.innerText = score;
-    counter(); // Record number of rounds
     //Player 1 Game logic
   } else if (
     event.code === "ArrowUp" &&
@@ -32,6 +37,7 @@ const gameLogic = document.addEventListener("keydown", function (event) {
   }
   if (score === winScoreP1) {
     scoreDisplay.innerText = "player 1 win!";
+    nextLevel(); // Change to next level
   } else if (score === winScoreP2) {
     scoreDisplay.innerText = "player 2 win!";
   }
@@ -63,11 +69,38 @@ document.addEventListener("keydown", function (event) {
 //Create parameters of the different level of the game. Var "strength",
 //Create a counter function that count how many times a player 1 wins and increase the counter
 
-function counter() {
-  if (score === winScoreP1) {
-    count++;
-    console.log(count);
-    console.log(score + "what is current score");
-    console.log(winScoreP1 + "winScoreP1");
+const nextLevel = () => {
+  win++;
+  switch (win) {
+    case 0:
+      str = str;
+      console.log(`${str} case 1000`);
+      break;
+    case 1:
+      str = 800;
+      console.log(`${str} case 800`);
+      break;
+    case 2:
+      str = 600;
+      console.log(`${str} case 600`);
+      break;
+    case 3:
+      str = 400;
+      console.log(`${str} case 400`);
+      break;
+    case 4:
+      str = 300;
+      console.log(`${str} case 300`);
+      break;
+    case 5:
+      str = 200;
+      console.log(`${str} case 200`);
+      break;
+    default:
+      console.log(win);
+      console.log(score + "what is current score");
+      console.log(winScoreP1 + "winScoreP1");
   }
-}
+};
+// End
+////////////////////////////////////////////////////////////////
