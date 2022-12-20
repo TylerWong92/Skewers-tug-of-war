@@ -9,7 +9,7 @@ let score = 0;
 const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
 const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
 const scoreDisplay = document.querySelector("h3"); // display current the score
-var str = 1000; // lower the number mean higher str
+var str = 100; // lower the number mean higher str
 let win = 0; // count user winning streak
 // let count = 0;
 
@@ -18,36 +18,47 @@ let win = 0; // count user winning streak
 //Game logic
 //Function that listen to user input of player1 pressing "space" and player2 pressing ""up arrow""
 //stop the loop if user input reach "winScoreP1" or "winScoreP2"
+//Add button function to delay 3 second
+function main() {
+  const gameLogic = document.addEventListener("keydown", function (event) {
+    if (event.code === "Space" && score < winScoreP1 && score > winScoreP2) {
+      score++;
+      console.log(score);
+      scoreDisplay.innerText = score;
+      //Player 1 Game logic
+    } else if (
+      event.code === "ArrowUp" &&
+      score < winScoreP1 &&
+      score > winScoreP2
+    ) {
+      score--;
+      console.log(score);
+      scoreDisplay.innerText = score;
+      //Player 2 Game logic
+    }
+    if (score === winScoreP1) {
+      scoreDisplay.innerText = "player 1 win!";
+      nextLevel(); // Change to next level
+    } else if (score === winScoreP2) {
+      scoreDisplay.innerText = "player 2 win!";
+    }
+  });
+}
 
-const gameLogic = document.addEventListener("keydown", function (event) {
-  if (event.code === "Space" && score < winScoreP1 && score > winScoreP2) {
-    score++;
-    console.log(score);
-    scoreDisplay.innerText = score;
-    //Player 1 Game logic
-  } else if (
-    event.code === "ArrowUp" &&
-    score < winScoreP1 &&
-    score > winScoreP2
-  ) {
-    score--;
-    console.log(score);
-    scoreDisplay.innerText = score;
-    //Player 2 Game logic
-  }
-  if (score === winScoreP1) {
-    scoreDisplay.innerText = "player 1 win!";
-    nextLevel(); // Change to next level
-  } else if (score === winScoreP2) {
-    scoreDisplay.innerText = "player 2 win!";
-  }
-});
+function pvpBut() {
+  setTimeout(function () {
+    main();
+  }, 3000);
+  //!TODO add a count down gif popup
+  console.log("count down start 3sec to game begin!");
+}
 //End
 ////////////////////////////////////////////////////////////////
 //Create Computer if there no player 2
 //Add a delay of 3 sec delay before running setInterval(comInput, str);
 function computerBut(comInput, str) {
   setTimeout(function () {
+    main();
     setInterval(comInput, str);
   }, 3000);
   //!TODO add a count down gif popup
