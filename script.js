@@ -101,6 +101,8 @@ const nextLevel = () => {
       console.log(score + "what is current score");
       console.log(winScoreP1 + "winScoreP1");
   }
+  score = 0;
 };
 // End
 ////////////////////////////////////////////////////////////////
+///Add a reset function in to the next level in my game
