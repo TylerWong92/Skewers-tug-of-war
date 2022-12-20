@@ -9,7 +9,7 @@ let score = 0;
 const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
 const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
 const scoreDisplay = document.querySelector("h3"); // display current the score
-var str = 10; // lower the number mean higher str
+var str = 1000; // lower the number mean higher str
 let win = 0; // count user winning streak
 // let count = 0;
 
@@ -45,9 +45,13 @@ const gameLogic = document.addEventListener("keydown", function (event) {
 //End
 ////////////////////////////////////////////////////////////////
 //Create Computer if there no player 2
-
-function setLevel(comInput, str) {
-  setInterval(comInput, str);
+//Add a delay of 3 sec delay before running setInterval(comInput, str);
+function computerBut(comInput, str) {
+  setTimeout(function () {
+    setInterval(comInput, str);
+  }, 3000);
+  //!TODO add a count down gif popup
+  console.log("count down start 3sec to game begin!");
 }
 // Execute the comInput function every 1000 milliseconds level 1
 
@@ -79,22 +83,27 @@ const nextLevel = () => {
     case 1:
       str = 100;
       console.log(`${str} case 800`);
+      //!TODO add a finish popup win1
       break;
     case 2:
       str = 400;
       console.log(`${str} case 400`);
+      //!TODO add a finish popup win2
       break;
     case 3:
       str = 300;
       console.log(`${str} case 300`);
+      //!TODO add a finish popup win3
       break;
     case 4:
       str = 200;
       console.log(`${str} case 200`);
+      //!TODO add a finish popup win4
       break;
     case 5:
       str = 100;
       console.log(`${str} case 100`);
+      //!TODO add a finish popup win5
       break;
     default:
       console.log(str);
