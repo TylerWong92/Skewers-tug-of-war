@@ -10,7 +10,6 @@ h3 {
 .com {
   align-items: center;
 }
-/* Remove After Testing */
 .background {
   background-image: url("./assets/background.jpg");
   background-repeat: no-repeat;
@@ -27,3 +26,5 @@ img {
   background-size: contain;
   width: 100%;
 }
+
+/* Remove After Testing */

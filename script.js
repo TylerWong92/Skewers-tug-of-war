@@ -10,6 +10,7 @@ let changeStr;
 let win = 0; // count user winning streak
 img = document.getElementById("myImage"); //move image
 let x = 0;
+
 //End
 ////////////////////////////////////////////////////////////////
 //Game logic
@@ -51,6 +52,9 @@ function main() {
 }
 
 function pvpBut() {
+  /////////////////////////////////
+  //countdown
+  countdown();
   setTimeout(function () {
     main();
   }, 3000);
@@ -62,6 +66,7 @@ function pvpBut() {
 //Create Computer if there no player 2
 //Add a delay of 3 sec delay before running setInterval(comInput, str);
 function computerBut(comInput, str) {
+  countdown();
   setTimeout(function () {
     main();
     changeStr = setInterval(comInput, str);
@@ -142,4 +147,14 @@ const nextLevel = () => {
 };
 // End
 ////////////////////////////////////////////////////////////////
-///Add a reset function in to the next level in my game
+///Add a 3 second message when PVP and Computer its press
+
+function countdown() {
+  const count = document.getElementById("countdown");
+  const timer = setInterval(function () {
+    count.innerHTML = count.innerHTML - 1;
+    if (count.innerHTML == 0) {
+      clearInterval(timer);
+    }
+  }, 1000);
+}
