@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h3 {
   text-align: center;
@@ -5,5 +10,20 @@ h3 {
 .com {
   align-items: center;
 }
-
 /* Remove After Testing */
+.background {
+  background-image: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.title {
+  padding: 5vw;
+  font-size: 2vw;
+}
+#skewer {
+  border: 1px solid red;
+}
+img {
+  background-size: contain;
+  width: 100%;
+}

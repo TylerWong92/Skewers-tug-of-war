@@ -9,10 +9,10 @@ let score = 0;
 const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
 const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
 const scoreDisplay = document.querySelector("h3"); // display current the score
-var str = 100; // lower the number mean higher str
+let str = 1000; // lower the number mean higher str
 let win = 0; // count user winning streak
-// let count = 0;
-
+img = document.getElementById("myImage"); //move image
+let x = 0;
 //End
 ////////////////////////////////////////////////////////////////
 //Game logic
@@ -23,6 +23,8 @@ function main() {
   const gameLogic = document.addEventListener("keydown", function (event) {
     if (event.code === "Space" && score < winScoreP1 && score > winScoreP2) {
       score++;
+      x -= 100;
+      img.style.marginLeft = x + "px";
       console.log(score);
       scoreDisplay.innerText = score;
       //Player 1 Game logic
@@ -32,6 +34,8 @@ function main() {
       score > winScoreP2
     ) {
       score--;
+      x += 100;
+      img.style.marginLeft = x + "px";
       console.log(score);
       scoreDisplay.innerText = score;
       //Player 2 Game logic
@@ -88,22 +92,22 @@ const nextLevel = () => {
   win++;
   switch (win) {
     case 0:
-      str = 100;
+      str = 1000;
       console.log(`${str} case 1000`);
       break;
     case 1:
-      str = 100;
+      str = 800;
       console.log(`${str} case 800`);
       //!TODO add a finish popup win1
       break;
     case 2:
-      str = 400;
-      console.log(`${str} case 400`);
+      str = 600;
+      console.log(`${str} case 600`);
       //!TODO add a finish popup win2
       break;
     case 3:
-      str = 300;
-      console.log(`${str} case 300`);
+      str = 400;
+      console.log(`${str} case 400`);
       //!TODO add a finish popup win3
       break;
     case 4:
@@ -123,7 +127,9 @@ const nextLevel = () => {
       console.log(winScoreP1 + "winScoreP1");
   }
   score = 0;
+  x = 0;
 };
 // End
 ////////////////////////////////////////////////////////////////
 ///Add a reset function in to the next level in my game
+//test
