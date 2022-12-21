@@ -1,8 +1,4 @@
 ////////////////////////////////////////////////////////////////
-//Gauge GUI TEST REMOVE AFTER
-
-// End
-////////////////////////////////////////////////////////////////
 //Game parameters
 
 let score = 0;
@@ -43,7 +39,11 @@ function main() {
     }
     if (score === winScoreP1) {
       scoreDisplay.innerText = "player 1 win!";
-      nextLevel(); // Change to next level
+      if (win === 5) {
+        clearInterval(changeStr);
+      } else {
+        nextLevel(); // Change to next level
+      }
     } else if (score === winScoreP2) {
       scoreDisplay.innerText = "player 2 win!";
     }
@@ -90,35 +90,37 @@ document.addEventListener("keydown", function (event) {
 //Create a counter function that count how many times a player 1 wins and increase the counter
 
 const nextLevel = () => {
-  win++;
   clearInterval(changeStr);
   switch (win) {
     case 0:
+      win++;
       str = 1000;
       console.log(`${str} interval 1000`);
 
       break;
     case 1:
+      win++;
       str = 800;
       console.log(`${str} interval 800`);
       img.src = "assets/test2.png";
       //!TODO add a finish popup win1
       break;
     case 2:
+      win++;
       str = 600;
-
       console.log(`${str} interval 600`);
       img.src = "assets/test3.png";
       //!TODO add a finish popup win2
       break;
     case 3:
+      win++;
       str = 500;
-
       console.log(`${str} interval 400`);
       img.src = "assets/test4.png";
       //!TODO add a finish popup win3
       break;
     case 4:
+      win++;
       str = 400;
       console.log(`${str} interval 200`);
       //!TODO add a finish popup win4
