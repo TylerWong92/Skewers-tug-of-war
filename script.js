@@ -9,7 +9,8 @@ let score = 0;
 const winScoreP1 = 10; // player 1 range 0~10 "win" at 10
 const winScoreP2 = -10; // player 2 range 0~ -10 "win" at -10
 const scoreDisplay = document.querySelector("h3"); // display current the score
-let str = 1000; // lower the number mean higher str
+let str = 800; // lower the number mean higher str
+let changeStr;
 let win = 0; // count user winning streak
 img = document.getElementById("myImage"); //move image
 let x = 0;
@@ -63,7 +64,7 @@ function pvpBut() {
 function computerBut(comInput, str) {
   setTimeout(function () {
     main();
-    setInterval(comInput, str);
+    changeStr = setInterval(comInput, str);
   }, 3000);
   //!TODO add a count down gif popup
   console.log("count down start 3sec to game begin!");
@@ -90,34 +91,41 @@ document.addEventListener("keydown", function (event) {
 
 const nextLevel = () => {
   win++;
+  clearInterval(changeStr);
   switch (win) {
     case 0:
       str = 1000;
-      console.log(`${str} case 1000`);
+      console.log(`${str} interval 1000`);
+
       break;
     case 1:
       str = 800;
-      console.log(`${str} case 800`);
+      console.log(`${str} interval 800`);
+      img.src = "assets/test2.png";
       //!TODO add a finish popup win1
       break;
     case 2:
       str = 600;
-      console.log(`${str} case 600`);
+
+      console.log(`${str} interval 600`);
+      img.src = "assets/test3.png";
       //!TODO add a finish popup win2
       break;
     case 3:
-      str = 400;
-      console.log(`${str} case 400`);
+      str = 500;
+
+      console.log(`${str} interval 400`);
+      img.src = "assets/test4.png";
       //!TODO add a finish popup win3
       break;
     case 4:
-      str = 200;
-      console.log(`${str} case 200`);
+      str = 400;
+      console.log(`${str} interval 200`);
       //!TODO add a finish popup win4
       break;
     case 5:
-      str = 100;
-      console.log(`${str} case 100`);
+      str = 300;
+      console.log(`${str} interval 100`);
       //!TODO add a finish popup win5
       break;
     default:
@@ -128,8 +136,8 @@ const nextLevel = () => {
   }
   score = 0;
   x = 0;
+  changeStr = setInterval(comInput, str);
 };
 // End
 ////////////////////////////////////////////////////////////////
 ///Add a reset function in to the next level in my game
-//test
