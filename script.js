@@ -128,6 +128,7 @@ const nextLevel = () => {
       win++;
       str = 400;
       console.log(`${str} interval 200`);
+      img.src = "assets/test5.png";
       //!TODO add a finish popup win4
       break;
     case 5:
