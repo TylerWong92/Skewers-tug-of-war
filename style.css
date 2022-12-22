@@ -21,7 +21,7 @@ h3 {
   display: grid;
   position: absolute;
   top: 0;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .title {
@@ -56,8 +56,8 @@ img {
   top: 5%;
 }
 .buttonStyle {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
   width: 10%;
   border-radius: 8px;
 }
