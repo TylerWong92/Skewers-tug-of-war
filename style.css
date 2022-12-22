@@ -6,6 +6,9 @@
 h1,
 h3 {
   text-align: center;
+  color: white;
+  padding: 5px 0;
+  background-color: rgba(255, 228, 196, 0.172);
 }
 .com {
   align-items: center;
