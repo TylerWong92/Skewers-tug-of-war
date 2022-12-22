@@ -95,7 +95,7 @@ document.addEventListener("keydown", function (event) {
 //Create a counter function that count how many times a player 1 wins and increase the counter
 
 const nextLevel = () => {
-  clearInterval(changeStr);
+  clearInterval(changeStr); //clear computer input line 72
   switch (win) {
     case 0:
       win++;
@@ -120,31 +120,31 @@ const nextLevel = () => {
     case 3:
       win++;
       str = 500;
-      console.log(`${str} interval 400`);
+      console.log(`${str} interval 500`);
       img.src = "assets/test4.png";
       //!TODO add a finish popup win3
       break;
     case 4:
       win++;
       str = 400;
-      console.log(`${str} interval 200`);
+      console.log(`${str} interval 400`);
       img.src = "assets/test5.png";
       //!TODO add a finish popup win4
       break;
     case 5:
       str = 300;
-      console.log(`${str} interval 100`);
+      console.log(`${str} interval 300`);
       //!TODO add a finish popup win5
       break;
     default:
-      console.log(str);
-      console.log(win);
-      console.log(score + "what is current score");
-      console.log(winScoreP1 + "winScoreP1");
+    // console.log(str);
+    // console.log(win);
+    // console.log(score + "what is current score");
+    // console.log(winScoreP1 + "winScoreP1");
   }
   score = 0;
   x = 0;
-  changeStr = setInterval(comInput, str);
+  changeStr = setInterval(comInput, str); //Restart computer input line 72
 };
 // End
 ////////////////////////////////////////////////////////////////
