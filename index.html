@@ -8,12 +8,10 @@
     <title>skewers tug of war</title>
   </head>
   <body>
-      <div class="background">
-        <h3>Start Game</h3>
-        <div id="skewer"><img id="myImage" src="assets/test1.png" /></div>
-      </div>
-      <h1 class="title">skewers tug of war</h1>
-    </section>
+    <div class="background">
+      <h3>Start Game</h3>
+      <div id="skewer"><img id="myImage" src="assets/test1.png" /></div>
+    </div>
     <div class="printResult">
       <button onclick="pvpBut()">PVP</button>
       <button class="com" onclick="computerBut(comInput, str)">Computer</button>
@@ -21,8 +19,13 @@
     <!-- Remove After Testing -->
     <div id="countdown">3</div>
     <!-- Remove After Testing -->
-    <section>
-      <input type="button" value="Reset Game" onclick="location.reload()" />
+    <section class="menu">
+      <div class="background2">
+        <div class="printResult">
+          <button onclick="pvpBut()">PVP</button>
+          <button class="com" onclick="computerBut(comInput, str)">Computer</button>
+          <input type="button" value="Reset Game" onclick="location.reload()" />
+        </div>
     </section>
     <script src="script.js"></script>
   </body>
