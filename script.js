@@ -42,7 +42,7 @@ function main() {
       scoreDisplay.innerText = "player 1 win!";
       if (win === 5) {
         clearInterval(changeStr);
-      } else {
+      } else if (event.code === "ArrowUp") {
         nextLevel(); // Change to next level
       }
     } else if (score === winScoreP2) {
