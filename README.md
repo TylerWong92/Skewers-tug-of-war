@@ -1,4 +1,4 @@
-![Demo](/src/AppDemo.gif)
+![Demo](/AppDemo.gif)
 
 Technologies used: Html/CSS/Javascript
 Brief intro
