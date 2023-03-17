@@ -1,3 +1,5 @@
+![Demo](./src/AppDemo.gif)
+
 Technologies used: Html/CSS/Javascript
 Brief intro
 Skewers tug of war is a simple button-smashing game that is built for the browser. The gameplay is simple there will be two-player mode and single-player mode.
